@@ -2,7 +2,11 @@
  * https://blog.csdn.net/zlp1992/article/details/51406067
  */
 package tree;
-public class TreeNode{
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+public class TreeNode {
     int val;
     TreeNode left;
     TreeNode right;
@@ -36,6 +40,28 @@ public class TreeNode{
         postOrderRecursion(node.left);
         postOrderRecursion(node.right);
         visit(node);
+    }
+
+    public int level(TreeNode node){
+        if(node==null) return 0;
+        return level(node.left)>level(node.right)? level(node.left)+1:level(node.right)+1;
+    }
+
+    /**
+     * 层序遍历 
+     * 广度优先搜索(BFS) breadth-first search
+     */
+    public void levelOrder(TreeNode node){
+        if(node==null) return;
+        Queue<TreeNode> q = new LinkedList<TreeNode>();
+        q.add(node);
+        TreeNode curr;
+        while(!q.isEmpty()){
+            curr = q.poll(); ////取出队列头部的元素，并从队列中移除
+            visit(curr);
+            if(curr.left!=null) q.add(curr.left);
+            if(curr.right!=null) q.add(curr.right);
+        }
     }
 
 
