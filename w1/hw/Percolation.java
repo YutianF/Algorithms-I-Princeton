@@ -1,6 +1,7 @@
 package w1.hw;
 
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+
 public class Percolation {
 
     // creates n-by-n grid, with all sites initially blocked
