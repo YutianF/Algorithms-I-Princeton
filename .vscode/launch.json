@@ -6,12 +6,11 @@
     "configurations": [
         {
             "type": "java",
-            "name": "Debug (Launch)-Percolation<Algorithms-I-Princeton_4ec6505b>",
+            "name": "CodeLens (Launch) - PercolationStats",
             "request": "launch",
-            "mainClass": "w1.Percolation",
+            "mainClass": "w1.hw.PercolationStats",
             "projectName": "Algorithms-I-Princeton_4ec6505b",
-            "args": "1"
+            "args": "2 10000",
         },
-
     ]
 }
