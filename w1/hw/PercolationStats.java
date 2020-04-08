@@ -54,14 +54,14 @@ public class PercolationStats {
 
     // sample mean of percolation threshold
     public double mean() {
-        this.mean = StdStats.mean(fractions)
+        this.mean = StdStats.mean(fractions);
         return this.mean;
 
     }
 
     // sample standard deviation of percolation threshold
     public double stddev() {
-        this.stddev = StdStats.stddev(fractions)
+        this.stddev = StdStats.stddev(fractions);
         return this.stddev;
 
     }
