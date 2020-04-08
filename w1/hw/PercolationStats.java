@@ -6,8 +6,8 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class PercolationStats {
     private double[] fractions; //opensite fraction in each experiment
-    private int nTrials;
-    private int nGrid;
+    private final int nTrials;
+    private final int nGrid;
 
     // perform independent trials on an n-by-n grid
     public PercolationStats(int n, int trials){
