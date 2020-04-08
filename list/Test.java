@@ -11,7 +11,7 @@ public class Test{
         List<Integer> list = new ArrayList<Integer>(Arrays.asList(0,1,2,3,4,5,6,7));
         ListIterator<Integer> listIterator = list.listIterator();
         listIterator.next();
-        listIterator.add(new Integer(99));
+        listIterator.add(99);
         System.out.println(list);
 
         

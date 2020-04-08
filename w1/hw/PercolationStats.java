@@ -26,7 +26,6 @@ public class PercolationStats {
     }
 
     private void startTrial() {
-        outer:
         for (int i=0; i<this.nTrials; i++){
             Percolation model = new Percolation(this.nGrid);
             inner:
