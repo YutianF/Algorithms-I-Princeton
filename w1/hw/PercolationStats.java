@@ -6,16 +6,14 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class PercolationStats {
     private double[] fractions; // opensite fraction in each experiment
-    private double mean;
-    private double stddev;
     private final int nTrials;
     private final int nGrid;
 
     // perform independent trials on an n-by-n grid
     public PercolationStats(int n, int trials) {
-        if(n <= 0 || trials <=0) 
+        if (n <= 0 || trials <= 0) 
             throw new IllegalArgumentException();
-        else{
+        else {
             this.fractions = new double[trials];
             this.nTrials = trials;
             this.nGrid = n;
@@ -26,19 +24,19 @@ public class PercolationStats {
     }
 
     private void startTrial() {
-        for (int i=0; i<this.nTrials; i++){
-            Percolation model = new Percolation(this.nGrid);
+        for (int i = 0; i < this.nTrials; i++) {
+            PercolationWithoutBackwash model = new PercolationWithoutBackwash(this.nGrid);
             inner:
-            while(true){
-                int row = StdRandom.uniform(this.nGrid)+1;
-                int col = StdRandom.uniform(this.nGrid)+1;
-                //choose a site uniformly among all blocked sites
+            while (true) {
+                int row = StdRandom.uniform(this.nGrid) + 1;
+                int col = StdRandom.uniform(this.nGrid) + 1;
+                // choose a site uniformly among all blocked sites
                 if (model.isOpen(row, col)) continue inner;
                 else {
                     
                     model.open(row, col);
-                    if(model.percolates()) {
-                        fractions[i] = ((double)model.numberOfOpenSites())/(this.nGrid*this.nGrid);
+                    if (model.percolates()) {
+                        fractions[i] = ((double) model.numberOfOpenSites())/(this.nGrid*this.nGrid);
                         break inner;
                     }
 
@@ -53,29 +51,25 @@ public class PercolationStats {
 
     // sample mean of percolation threshold
     public double mean() {
-        this.mean = StdStats.mean(fractions);
-        return this.mean;
+        return StdStats.mean(fractions);
 
     }
 
     // sample standard deviation of percolation threshold
     public double stddev() {
-        this.stddev = StdStats.stddev(fractions);
-        return this.stddev;
+        return StdStats.stddev(fractions);
 
     }
 
     // low endpoint of 95% confidence interval
     public double confidenceLo() {
-         return 
-            this.mean-1.96*this.stddev/Math.sqrt(this.nTrials);
+         return mean()-1.96*stddev()/Math.sqrt(this.nTrials);
 
     }
 
     // high endpoint of 95% confidence interval
     public double confidenceHi() {
-        return 
-            this.mean+1.96*this.stddev/Math.sqrt(this.nTrials);
+        return mean()+1.96*stddev()/Math.sqrt(this.nTrials);
 
     }
 

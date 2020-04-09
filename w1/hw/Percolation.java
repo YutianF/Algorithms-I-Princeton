@@ -36,7 +36,7 @@ public class Percolation {
 
     // opens the site (row, col) if it is not open already
     public void open(int row, int col) {
-        if(row < 0 || row > this.nGrid || col <0 || col > this.nGrid) 
+        if(row < 1 || row > this.nGrid || col < 1 || col > this.nGrid) 
             throw new IllegalArgumentException();
         else{
             int node = getIndex(row, col);
@@ -57,7 +57,7 @@ public class Percolation {
 
     // is the site (row, col) open?
     public boolean isOpen(int row, int col) {
-        if(row < 0 || row > this.nGrid || col <0 || col > this.nGrid) 
+        if(row < 1 || row > this.nGrid || col < 1 || col > this.nGrid) 
             throw new IllegalArgumentException();
         else 
             return this.isOpen[row-1][col-1];
@@ -67,7 +67,7 @@ public class Percolation {
     // is the site (row, col) full?
     // may display backwash problem
     public boolean isFull(int row, int col) {
-        if(row < 0 || row > this.nGrid || col <0 || col > this.nGrid) 
+        if(row < 1 || row > this.nGrid || col < 1 || col > this.nGrid) 
             throw new IllegalArgumentException();
         else
             return this.uf.find(this.top) == this.uf.find(getIndex(row, col));
