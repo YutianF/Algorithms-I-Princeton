@@ -2,6 +2,12 @@ package w1.hw;
 
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
+/**
+ * virtual top and bottom node will bring backwash problem
+ * backwash problem: 有了一个虚拟底层位置，如果网格已经渗透了。这时判断其中一个位置（与底部相连，并且底部是打开的，与虚拟底层位置相连）是否满（即与虚拟顶层位置是相连的），那么不管这个位置是不是真的满，结果总会是满的。
+ * 因为网格已经渗透了，那么虚拟顶层位置与虚拟底层位置总是相连的，而这个位置与虚拟顶层位置是相连的，这时候再判断它是不是满（与虚拟顶层位置相连），结果当然总是为真。
+ * 
+ **/ 
 public class Percolation {
     private boolean[][] isOpen;
     private int nOpenSite;
