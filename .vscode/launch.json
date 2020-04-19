@@ -6,11 +6,19 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Permutation",
+            "request": "launch",
+            "mainClass": "w2.hw.Permutation",
+            "projectName": "Algorithms-I-Princeton_4ec6505b",
+            "args":"3"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - PercolationStats",
             "request": "launch",
             "mainClass": "w1.hw.PercolationStats",
             "projectName": "Algorithms-I-Princeton_4ec6505b",
-            "args": "2 10000",
-        },
+            "args": "2 10000"
+        }
     ]
 }
