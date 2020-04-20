@@ -8,34 +8,34 @@ import edu.princeton.cs.algs4.StdOut;
 
 public class RandomizedQueue<Item> implements Iterable<Item> {
     private Item[] s;
-    private int N; //下一个载入的结点
+    private int n; //下一个载入的结点
 
     // construct an empty randomized queue
     public RandomizedQueue() {
         s = (Item[]) new Object[2];
-        N = 0;
+        n = 0;
     }
 
     // is the randomized queue empty?
     public boolean isEmpty() {
-        return N == 0;
+        return n == 0;
     }
 
     // return the number of items on the randomized queue
     public int size() {
-        return N;
+        return n;
     }
 
     // add the item
     public void enqueue(Item item) {
         if (item == null) throw new IllegalArgumentException();
-        if (N == s.length) resize(2 * s.length);
-        s[N++] = item;
+        if (n == s.length) resize(2 * s.length);
+        s[n++] = item;
     }
 
     private void resize(int capacity) {
         Item[] copy = (Item[]) new Object[capacity];
-        for (int i = 0; i < N; i ++) {
+        for (int i = 0; i < n; i++) {
             copy[i] = s[i];
         }
         s = copy;
@@ -44,11 +44,11 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     // remove and return a random item
     public Item dequeue() {
         if (isEmpty()) throw new NoSuchElementException();
-        int index = StdRandom.uniform(N);
-        swap(index, N-1);
-        Item item = s[--N];
-        s[N] = null;
-        if (N > 0 && N == s.length/4) resize(s.length/2);
+        int index = StdRandom.uniform(n);
+        swap(index, n-1);
+        Item item = s[--n];
+        s[n] = null;
+        if (n > 0 && n == s.length/4) resize(s.length/2);
         return item;
     }
 
@@ -61,7 +61,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     // return a random item (but do not remove it)
     public Item sample() {
         if (isEmpty()) throw new NoSuchElementException();
-        return s[StdRandom.uniform(N)];
+        return s[StdRandom.uniform(n)];
     }
 
     // return an independent iterator over items in random order
@@ -72,12 +72,12 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
     private class RandomArrayIterator implements Iterator<Item> {
         private int i = 0;
 
-        public RandomArrayIterator(){
-            StdRandom.shuffle(s, 0, N-1);
+        public RandomArrayIterator() {
+            StdRandom.shuffle(s, 0, n-1);
         }
         
         public boolean hasNext() {
-            return i < N;
+            return i < n;
         }
 
         public void remove() {
@@ -99,14 +99,14 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
         randomizedQueue.enqueue("3");
         randomizedQueue.enqueue("4");
 
-        for(String s : randomizedQueue) StdOut.print(s);
+        for (String s : randomizedQueue) StdOut.print(s);
         StdOut.println();
 
         StdOut.println(randomizedQueue.sample());
 
         StdOut.println(randomizedQueue.dequeue());
         
-        for(String s : randomizedQueue) StdOut.print(s);
+        for (String s : randomizedQueue) StdOut.print(s);
         StdOut.println();
     }  
 

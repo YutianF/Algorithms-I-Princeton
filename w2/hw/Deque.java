@@ -9,7 +9,7 @@ import edu.princeton.cs.algs4.StdOut;
 public class Deque<Item> implements Iterable<Item> {
 
     private Node first, last;
-    int size;
+    private int size;
     
     private class Node {
         Item item;
@@ -19,7 +19,8 @@ public class Deque<Item> implements Iterable<Item> {
 
     // construct an empty deque
     public Deque() {
-        first = last = null;
+        first = null;
+        last = null;
         size = 0;
     }
 
@@ -40,7 +41,8 @@ public class Deque<Item> implements Iterable<Item> {
             first = new Node();
             first.item = item;
             last = first;
-        }else {
+        } 
+        else {
             Node oldFirst = first;
             first = new Node();
             first.item = item;
@@ -72,9 +74,10 @@ public class Deque<Item> implements Iterable<Item> {
     public Item removeFirst() {
         if (isEmpty()) throw new NoSuchElementException();
         Item item;
-        if (first == last){
+        if (first == last) {
             item = first.item;
-            first = last = null;
+            first = null;
+            last = null;
         } 
         else {
             Node oldFirst = first;
@@ -94,7 +97,8 @@ public class Deque<Item> implements Iterable<Item> {
         Item item;
         if (first == last) {
             item = first.item;
-            first = last = null;
+            first = null;
+            last = null;
         }
         else {
             Node oldLast = last;
@@ -139,22 +143,22 @@ public class Deque<Item> implements Iterable<Item> {
         deque.addLast(2);
         deque.addLast(3);
 
-        for(Integer s: deque) StdOut.print(s);
+        for (Integer s: deque) StdOut.print(s);
         StdOut.println();
 
         deque.addFirst(0);
-        for(Integer s: deque) StdOut.print(s);
+        for (Integer s: deque) StdOut.print(s);
         StdOut.println();
 
         deque.addLast(9);
-        for(Integer s: deque) StdOut.print(s);
+        for (Integer s: deque) StdOut.print(s);
         StdOut.println();
 
         StdOut.println(deque.removeFirst());
 
         StdOut.println(deque.removeLast());
 
-        for(Integer s: deque) StdOut.print(s);
+        for (Integer s: deque) StdOut.print(s);
         StdOut.println();
 
         StdOut.println(deque.size());
