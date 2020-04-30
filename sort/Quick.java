@@ -1,5 +1,5 @@
 package sort;
-class Sort{
+class Quick{
 
     /**
      * 快速排序方法
