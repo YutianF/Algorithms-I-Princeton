@@ -4,6 +4,7 @@ public class Insertion {
 
     private Insertion(){ }
 
+    
     public static void sort(Comparable[] a) {
         int n = a.length;
         for (int i = 1; i < n; i++) {
