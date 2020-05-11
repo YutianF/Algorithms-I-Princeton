@@ -4,6 +4,15 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Multiway",
+            "request": "launch",
+            "mainClass": "w4.src.Multiway",
+            "projectName": "Algorithms-I-Princeton_b7bed323",
+            "args": "https://algs4.cs.princeton.edu/24pq/m1.txt https://algs4.cs.princeton.edu/24pq/m2.txt"
+        },
         {
             "type": "java",
             "name": "CodeLens (Launch) - RandomizedQueue",
