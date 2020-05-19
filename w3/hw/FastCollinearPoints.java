@@ -26,7 +26,7 @@ public class FastCollinearPoints {
         size = 0;
 
         for (int i = 0; i < pts.length; i++) {
-            Arrays.sort(pts, )
+            
         }
 
     }

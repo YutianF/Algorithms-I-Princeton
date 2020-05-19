@@ -4,7 +4,24 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Board",
+            "request": "launch",
+            "mainClass": "w4.hw.Board",
+            "projectName": "Algorithms-I-Princeton_b7bed323",
+            "args": "puzzle04.txt",
+            "cwd": "${fileDirname}"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Solver",
+            "request": "launch",
+            "mainClass": "w4.hw.Solver",
+            "projectName": "Algorithms-I-Princeton_b7bed323",
+            "args": "puzzle04.txt",
+            "cwd": "${fileDirname}"
+        },
         {
             "type": "java",
             "name": "CodeLens (Launch) - Multiway",
