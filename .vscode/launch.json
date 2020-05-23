@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - Permutation",
+            "request": "launch",
+            "mainClass": "w2.hw.Permutation",
+            "projectName": "Algorithms-I-Princeton_b7bed323"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - RandomizedQueue",
+            "request": "launch",
+            "mainClass": "w2.hw.RandomizedQueue",
+            "projectName": "Algorithms-I-Princeton_b7bed323"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Board",
             "request": "launch",
             "mainClass": "w4.hw.Board",
