@@ -4,8 +4,6 @@ import edu.princeton.cs.algs4.Point2D;
 import edu.princeton.cs.algs4.RectHV;
 import java.util.TreeSet;
 
-import org.graalvm.compiler.lir.StandardOp.NullCheck;
-
 import java.util.List;
 import java.util.ArrayList;
 
