@@ -40,6 +40,7 @@ public class PointSET {
     }
 
     public Iterable<Point2D> range(RectHV rect) {
+        if (rect == null) throw new IllegalArgumentException();
         List<Point2D> list = new ArrayList<>();
         for (Point2D p : set) {
             if (p.x() >= rect.xmin() && p.x() <= rect.xmax() 
@@ -52,6 +53,7 @@ public class PointSET {
     }
 
     public Point2D nearest(Point2D that) {
+        if (that == null) throw new IllegalArgumentException();
         double minDis = Double.MAX_VALUE;
         Point2D minPnt = null;
         for (Point2D p : set) {
